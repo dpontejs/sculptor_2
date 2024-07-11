@@ -70,6 +70,6 @@ Thumbs.db
 # --------
 *.dll
 *.exe
-latex
-build
-html
+latex/
+build/
+html/
