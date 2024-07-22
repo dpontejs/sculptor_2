@@ -8,7 +8,7 @@
 int main(void)
 {
     Config *conf = new Config();
-    conf->readConfigFile("project/input.txt");
+    conf->readConfigFile("input.txt");
 
     Sculptor *s = new Sculptor(conf->dimx, conf->dimy, conf->dimz);
 
@@ -17,7 +17,7 @@ int main(void)
         fig->draw(*s);
     }
 
-    s->writeOFF("project/output.off");
+    s->writeOFF("output.off");
 
     delete s;
     delete conf;

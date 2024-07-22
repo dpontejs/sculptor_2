@@ -14,7 +14,7 @@ private:
     int rz;
 public:
     explicit CutEllipsoid(int xcenter, int ycenter, int zcenter, int rx, int ry, int rz);
-    virtual void draw(Sculptor &t);
+    void draw(Sculptor &t);
 };
 
 #endif // CUTELLIPSOID_H

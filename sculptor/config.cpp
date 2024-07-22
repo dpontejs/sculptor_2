@@ -20,6 +20,7 @@ void Config::readConfigFile(const char *filename)
     {
         std::istringstream iss(line);
         std::string comando;
+        iss >> comando;
 
         if (comando == "dim")
         {
@@ -62,32 +63,32 @@ void Config::readConfigFile(const char *filename)
 
         else if (comando == "putsphere")
         {
-            int xc, yc, zc, radius;
+            int xcenter, ycenter, zcenter, radius;
             float r, g, b, a;
-            iss >> xc >> yc >> zc >> radius >> r >> g >> b >> a;
-            draws.push_back(new PutSphere(xc,yc,zc,radius,r,g,b,a));
+            iss >> xcenter >> ycenter >> zcenter >> radius >> r >> g >> b >> a;
+            draws.push_back(new PutSphere(xcenter,ycenter,zcenter,radius,r,g,b,a));
         }
 
         else if (comando == "cutsphere")
         {
-            int xc, yc, zc, radius;
-            iss >> xc >> yc >> zc >> radius;
-            draws.push_back(new CutSphere(xc,yc,zc,radius));
+            int xcenter, ycenter, zcenter, radius;
+            iss >> xcenter >> ycenter >> zcenter >> radius;
+            draws.push_back(new CutSphere(xcenter,ycenter,zcenter,radius));
         }
 
         else if (comando == "putellipsoid")
         {
-            int xc, yc, zc, rx, ry, rz;
+            int xcenter, ycenter, zcenter, rx, ry, rz;
             float r, g, b, a;
-            iss >> xc >> yc >> zc >> rx >> ry >> rz >> r >> g >> b >> a;
-            draws.push_back(new PutEllipsoid(xc,yc,zc,rx,ry,rz,r,g,b,a));
+            iss >> xcenter >> ycenter >> zcenter >> rx >> ry >> rz >> r >> g >> b >> a;
+            draws.push_back(new PutEllipsoid(xcenter,ycenter,zcenter,rx,ry,rz,r,g,b,a));
         }
 
         else if (comando == "cutellipsoid")
         {
-            int xc, yc, zc, rx, ry, rz;
-            iss >> xc >> yc >> zc >> rx >> ry >> rz;
-            draws.push_back(new CutEllipsoid(xc,yc,zc,rx,ry,rz));
+            int xcenter, ycenter, zcenter, rx, ry, rz;
+            iss >> xcenter >> ycenter >> zcenter >> rx >> ry >> rz;
+            draws.push_back(new CutEllipsoid(xcenter,ycenter,zcenter,rx,ry,rz));
         }
 
         else

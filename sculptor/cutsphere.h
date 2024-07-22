@@ -12,7 +12,7 @@ private:
     int radius;
 public:
     explicit CutSphere(int xcenter, int ycenter, int zcenter, int radius);
-    virtual void draw(Sculptor &t);
+    void draw(Sculptor &t);
 };
 
 #endif // CUTSPHERE_H

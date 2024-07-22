@@ -11,7 +11,7 @@ private:
     int z;
 public:
     explicit CutVoxel(int x, int y, int z);
-    virtual void draw(Sculptor &t);
+    void draw(Sculptor &t);
 };
 
 #endif // CUTVOXEL_H
